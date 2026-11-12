@@ -184,7 +184,7 @@
         <div class="text-center max-w-xl mx-auto mb-8">
           <span class="text-xs font-extrabold text-emerald-700 uppercase tracking-widest">Get Retail Software Proposal</span>
           <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Request Supermarket POS Scope</h3>
-          <p class="text-xs text-slate-600 mt-2">Delivered straight to our engineering inbox at <code>aetherovatesoftwaresolutions@gmail.com</code>.</p>
+          <p class="text-xs text-slate-600 mt-2">Delivered straight to our engineering inbox at <code>aetherovatesoftwaresolution@gmail.com</code> &amp; WhatsApp <code>+91 76079 19233</code>.</p>
         </div>
 
         <form id="retail-inquiry-form" class="space-y-4 max-w-xl mx-auto">
@@ -210,9 +210,9 @@
             </div>
           </div>
 
-          <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2">
+          <button type="submit" id="rt-submit-btn" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2">
             <i data-lucide="send" class="w-4 h-4"></i>
-            <span>Submit Requirements & Send To Gmail</span>
+            <span>Submit to Gmail &amp; Mobile (+91 76079 19233)</span>
           </button>
 
           <div id="rt-status" class="hidden p-3 rounded-xl text-xs font-medium text-center"></div>
@@ -236,29 +236,24 @@
     </div>
   </footer>
 
+  <script src="../notifications.js"></script>
   <script>
     lucide.createIcons();
-    document.getElementById('retail-inquiry-form').addEventListener('submit', async (e) => {
+    const retailForm = document.getElementById('retail-inquiry-form');
+    retailForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const status = document.getElementById('rt-status');
-      const name = document.getElementById('rt-name').value;
-      const store = document.getElementById('rt-store').value;
-      const phone = document.getElementById('rt-phone').value;
-      const counters = document.getElementById('rt-counters').value;
-
-      try {
-        await fetch('https://formsubmit.co/ajax/aetherovatesoftwaresolutions@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            name, store, phone, counters,
-            _subject: `New Retail Software Inquiry: ${store}`
-          })
-        });
-      } catch (err) {}
-
-      status.className = 'p-4 rounded-xl text-xs font-semibold text-center bg-emerald-50 text-emerald-800 border border-emerald-200 block';
-      status.innerHTML = `🎉 Thank you ${name}! Your requirements for <strong>${store}</strong> have been delivered to our engineering inbox (<code>aetherovatesoftwaresolutions@gmail.com</code>). We will contact you within 24 hours.`;
+      await window.AetherovateNotify.submitLead({
+        form: retailForm,
+        alertBox: document.getElementById('rt-status'),
+        submitBtn: document.getElementById('rt-submit-btn'),
+        data: {
+          name: document.getElementById('rt-name').value.trim(),
+          company: document.getElementById('rt-store').value.trim(),
+          phone: document.getElementById('rt-phone').value.trim(),
+          service: 'Supermarket GST POS & Billing',
+          message: `Counters/Volume: ${document.getElementById('rt-counters').value || 'Not specified'}`
+        }
+      });
     });
   </script>
 </body>

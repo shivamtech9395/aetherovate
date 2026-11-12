@@ -139,12 +139,12 @@
     <div class="max-w-2xl mx-auto px-4">
       <div class="glass-card p-8 border-2 border-slate-300 shadow-2xl text-center">
         <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Get Manufacturing ERP Blueprint</h3>
-        <p class="text-xs text-slate-600 mb-6">Delivered directly to our Gmail inbox at <code>aetherovatesoftwaresolutions@gmail.com</code>.</p>
+        <p class="text-xs text-slate-600 mb-6">Delivered directly to our Gmail inbox at <code>aetherovatesoftwaresolution@gmail.com</code> &amp; WhatsApp <code>+91 76079 19233</code>.</p>
         <form id="mfg-form" class="space-y-4 text-left">
           <input type="text" id="mf-name" required placeholder="Plant Head / Managing Director" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-indigo-500 focus:bg-white outline-none shadow-xs">
           <input type="text" id="mf-company" required placeholder="Factory / Company Name" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-indigo-500 focus:bg-white outline-none shadow-xs">
           <input type="tel" id="mf-phone" required placeholder="WhatsApp Number" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-indigo-500 focus:bg-white outline-none shadow-xs">
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-slate-800 to-indigo-800 hover:from-slate-900 hover:to-indigo-900 text-white font-extrabold text-xs shadow-lg transition-all">Submit & Send To Gmail</button>
+          <button type="submit" id="mf-submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-slate-800 to-indigo-800 hover:from-slate-900 hover:to-indigo-900 text-white font-extrabold text-xs shadow-lg transition-all">Submit to Gmail &amp; Mobile (+91 76079 19233)</button>
           <div id="mf-status" class="hidden p-3 rounded-xl text-xs text-center"></div>
         </form>
       </div>
@@ -158,23 +158,23 @@
     </div>
   </footer>
 
+  <script src="../notifications.js"></script>
   <script>
     lucide.createIcons();
-    document.getElementById('mfg-form').addEventListener('submit', async (e) => {
+    const mfgForm = document.getElementById('mfg-form');
+    mfgForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const status = document.getElementById('mf-status');
-      const name = document.getElementById('mf-name').value;
-      const company = document.getElementById('mf-company').value;
-      const phone = document.getElementById('mf-phone').value;
-      try {
-        await fetch('https://formsubmit.co/ajax/aetherovatesoftwaresolutions@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name, company, phone, _subject: `New Factory ERP Inquiry: ${company}` })
-        });
-      } catch (err) {}
-      status.className = 'p-3 rounded-xl text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-300 block';
-      status.innerHTML = `🎉 Thank you ${name}! Your requirements for <strong>${company}</strong> have been sent to our Gmail inbox.`;
+      await window.AetherovateNotify.submitLead({
+        form: mfgForm,
+        alertBox: document.getElementById('mf-status'),
+        submitBtn: document.getElementById('mf-submit-btn'),
+        data: {
+          name: document.getElementById('mf-name').value.trim(),
+          company: document.getElementById('mf-company').value.trim(),
+          phone: document.getElementById('mf-phone').value.trim(),
+          service: 'Manufacturing Plant ERP'
+        }
+      });
     });
   </script>
 </body>

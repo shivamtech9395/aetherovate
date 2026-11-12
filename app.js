@@ -2,14 +2,8 @@
 
 // ✉️ CONFIGURE YOUR GMAIL & MOBILE ALERT KEYS HERE:
 // All inquiries submitted from the website form route to this Gmail & WhatsApp mobile!
-const AETHEROVATE_GMAIL = "aetherovatesoftwaresolutions@gmail.com";
+const AETHEROVATE_GMAIL = "aetherovatesoftwaresolution@gmail.com";
 const AETHEROVATE_WHATSAPP = "917607919233";
-
-// Optional zero-friction keys (leave blank to use FormSubmit + WhatsApp click-to-send):
-// 1. Free Web3Forms Access Key (https://web3forms.com) -> instant silent Gmail delivery without activation delay
-const WEB3FORMS_ACCESS_KEY = "";
-// 2. Free CallMeBot WhatsApp API Key (https://www.callmebot.com/blog/free-api-whatsapp-messages/) -> instant silent mobile ping to +91 76079 19233
-const CALLMEBOT_API_KEY = "";
 
 // 1. LIVE CORPORATE FILM CHAPTERS
 const videoScenes = [
@@ -561,156 +555,7 @@ function setupCalculator() {
   recalculate();
 }
 
-// 6. REAL-TIME GMAIL + MOBILE WHATSAPP DELIVERY ENGINE
-function buildInquiryLinks(data) {
-  const whatsappText = [
-    "*New Aetherovate Website Inquiry*",
-    `Name: ${data.name}`,
-    `Company: ${data.company}`,
-    `Phone: ${data.phone}`,
-    `Email: ${data.email || "Not provided"}`,
-    `Service: ${data.service}`,
-    `Requirements: ${data.message || "Not provided"}`
-  ].join("\n");
-
-  const emailSubject = `New Aetherovate Inquiry: ${data.company} (${data.service})`;
-  const emailBody = [
-    `Name: ${data.name}`,
-    `Company: ${data.company}`,
-    `Phone / WhatsApp: ${data.phone}`,
-    `Email: ${data.email || "Not provided"}`,
-    `Service Needed: ${data.service}`,
-    "",
-    `Requirements:\n${data.message || "Not provided"}`
-  ].join("\n");
-
-  return {
-    whatsappText,
-    waUrl: `https://wa.me/${AETHEROVATE_WHATSAPP}?text=${encodeURIComponent(whatsappText)}`,
-    gmailWebUrl: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(AETHEROVATE_GMAIL)}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`,
-    mailtoUrl: `mailto:${AETHEROVATE_GMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
-  };
-}
-
-async function sendSilentMobileAlert(whatsappText) {
-  const key = CALLMEBOT_API_KEY.trim();
-  if (!key) return { sent: false, skipped: true };
-  try {
-    const url = `https://api.callmebot.com/whatsapp.php?phone=${AETHEROVATE_WHATSAPP}&text=${encodeURIComponent(whatsappText)}&apikey=${encodeURIComponent(key)}`;
-    await fetch(url, { mode: "no-cors" });
-    return { sent: true };
-  } catch (err) {
-    return { sent: false, error: err };
-  }
-}
-
-async function sendEmailViaProvider(data) {
-  if (window.location.protocol === "file:") {
-    return {
-      ok: false,
-      reason: "file_protocol",
-      message: "Direct background Gmail API needs http://localhost (start.bat) or live HTTPS website."
-    };
-  }
-
-  const web3Key = WEB3FORMS_ACCESS_KEY.trim();
-  if (web3Key) {
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify({
-        access_key: web3Key,
-        subject: `New Aetherovate Inquiry: ${data.company} (${data.service})`,
-        from_name: "Aetherovate Website",
-        name: data.name,
-        company: data.company,
-        phone: data.phone,
-        email: data.email || "not-provided@aetherovate.in",
-        service: data.service,
-        message: data.message || "No extra details provided"
-      })
-    });
-    const json = await res.json();
-    return res.ok && json.success ? { ok: true } : { ok: false, reason: "provider_error", message: json.message };
-  }
-
-  const payload = {
-    name: data.name,
-    company: data.company,
-    phone: data.phone,
-    email: data.email || "Not provided",
-    service: data.service,
-    message: data.message || "No extra message",
-    _subject: `New Aetherovate Inquiry: ${data.company} (${data.service})`,
-    _template: "table",
-    _captcha: "false"
-  };
-  if (data.email) payload._replyto = data.email;
-
-  const response = await fetch(`https://formsubmit.co/ajax/${AETHEROVATE_GMAIL}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "Accept": "application/json" },
-    body: JSON.stringify(payload)
-  });
-
-  const result = await response.json();
-  const succeeded = response.ok && (result.success === true || result.success === "true");
-  if (succeeded) return { ok: true, message: result.message };
-
-  const rawMsg = String(result.message || "");
-  if (rawMsg.toLowerCase().includes("activat") || rawMsg.toLowerCase().includes("confirm")) {
-    return { ok: false, reason: "needs_activation", message: rawMsg };
-  }
-  return { ok: false, reason: "provider_error", message: rawMsg || "Email service returned an error." };
-}
-
-function renderInquiryStatus(alertBox, state, data, links, mobileSent) {
-  if (!alertBox) return;
-
-  const actionButtons = `
-    <div class="mt-3 flex flex-wrap items-center justify-center gap-2">
-      <a href="${links.waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs">
-        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-        <span>Send on WhatsApp (+91 76079 19233)</span>
-      </a>
-      <a href="${links.gmailWebUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs shadow-xs">
-        <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-        <span>Open in Gmail</span>
-      </a>
-      <a href="${links.mailtoUrl}" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 font-bold text-xs">
-        <span>Mail App</span>
-      </a>
-    </div>
-  `;
-
-  if (state.ok) {
-    alertBox.className = "p-4 rounded-xl text-xs font-medium text-center bg-emerald-50 text-emerald-900 border border-emerald-200 block";
-    alertBox.innerHTML = `
-      <div class="font-extrabold text-sm mb-1">🎉 Inquiry Delivered to Gmail!</div>
-      <div>Thank you, <strong>${data.name}</strong>! Your inquiry for <strong>${data.company}</strong> was sent to <code>${AETHEROVATE_GMAIL}</code>${mobileSent ? " and triggered for WhatsApp mobile <strong>+91 76079 19233</strong>" : ""}.</div>
-      ${actionButtons}
-    `;
-    return;
-  }
-
-  if (state.reason === "needs_activation") {
-    alertBox.className = "p-4 rounded-xl text-xs font-medium text-center bg-amber-50 text-amber-900 border border-amber-300 block";
-    alertBox.innerHTML = `
-      <div class="font-extrabold text-sm mb-1">⚠️ 1-Time Gmail Verification Required</div>
-      <div>FormSubmit sent a one-time activation link to <code>${AETHEROVATE_GMAIL}</code> (check <strong>Inbox &amp; Spam</strong>). Click <strong>Activate Form</strong> once, and every future form submission will land directly in Gmail! Meanwhile, click below to deliver immediately:</div>
-      ${actionButtons}
-    `;
-    return;
-  }
-
-  alertBox.className = "p-4 rounded-xl text-xs font-medium text-center bg-blue-50 text-slate-800 border border-blue-200 block";
-  alertBox.innerHTML = `
-    <div class="font-extrabold text-sm mb-1">📲 Inquiry Ready — Complete Delivery Below</div>
-    <div>${state.message || "Background email service could not complete from this session."} Tap WhatsApp or Gmail below to send directly to <strong>+91 76079 19233</strong> / <code>${AETHEROVATE_GMAIL}</code>:</div>
-    ${actionButtons}
-  `;
-}
-
+// 6. REAL-TIME GMAIL + MOBILE WHATSAPP & PUSH DELIVERY ENGINE
 function setupContactForm() {
   const form = document.getElementById("project-contact-form");
   const alertBox = document.getElementById("form-status-alert");
@@ -731,41 +576,10 @@ function setupContactForm() {
     };
 
     const whatsappCheckbox = document.getElementById("form-whatsapp-notify");
-    const shouldOpenWhatsapp = whatsappCheckbox ? whatsappCheckbox.checked : true;
-    const links = buildInquiryLinks(data);
+    const openWhatsapp = whatsappCheckbox ? whatsappCheckbox.checked : true;
 
-    // Trigger WhatsApp mobile chat synchronously on user submit so browser popup blocker allows it
-    if (shouldOpenWhatsapp) {
-      window.open(links.waUrl, "_blank", "noopener,noreferrer");
-    }
-
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Sending to Gmail &amp; Mobile...</span>`;
-    }
-
-    try {
-      const [emailResult] = await Promise.all([
-        sendEmailViaProvider(data),
-        sendSilentMobileAlert(links.whatsappText)
-      ]);
-
-      renderInquiryStatus(alertBox, emailResult, data, links, shouldOpenWhatsapp);
-      if (emailResult.ok) form.reset();
-    } catch (err) {
-      renderInquiryStatus(
-        alertBox,
-        { ok: false, reason: "network_error", message: "Network/CORS blocked background email request in this browser." },
-        data,
-        links,
-        shouldOpenWhatsapp
-      );
-    } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `<i data-lucide="send" class="w-4 h-4"></i><span>Submit Inquiry to Gmail &amp; Mobile (+91 76079 19233)</span>`;
-      }
-      if (window.lucide) lucide.createIcons();
+    if (window.AetherovateNotify) {
+      await window.AetherovateNotify.submitLead({ form, alertBox, submitBtn, data, openWhatsapp });
     }
   });
 }

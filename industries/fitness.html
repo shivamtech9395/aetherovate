@@ -140,12 +140,12 @@
     <div class="max-w-2xl mx-auto px-4">
       <div class="glass-card p-8 border-2 border-orange-200 shadow-2xl text-center">
         <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Get Gym / Salon Software Blueprint</h3>
-        <p class="text-xs text-slate-600 mb-6">Sent directly to our Gmail inbox at <code>aetherovatesoftwaresolutions@gmail.com</code>.</p>
+        <p class="text-xs text-slate-600 mb-6">Sent directly to our Gmail inbox at <code>aetherovatesoftwaresolution@gmail.com</code> &amp; WhatsApp <code>+91 76079 19233</code>.</p>
         <form id="gym-form" class="space-y-4 text-left">
           <input type="text" id="g-name" required placeholder="Owner Name" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-orange-500 focus:bg-white outline-none shadow-xs">
           <input type="text" id="g-gym" required placeholder="Gym / Salon Name" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-orange-500 focus:bg-white outline-none shadow-xs">
           <input type="tel" id="g-phone" required placeholder="WhatsApp Number" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-orange-500 focus:bg-white outline-none shadow-xs">
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-extrabold text-xs shadow-lg transition-all">Submit & Send To Gmail</button>
+          <button type="submit" id="g-submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-extrabold text-xs shadow-lg transition-all">Submit to Gmail &amp; Mobile (+91 76079 19233)</button>
           <div id="g-status" class="hidden p-3 rounded-xl text-xs text-center"></div>
         </form>
       </div>
@@ -159,23 +159,23 @@
     </div>
   </footer>
 
+  <script src="../notifications.js"></script>
   <script>
     lucide.createIcons();
-    document.getElementById('gym-form').addEventListener('submit', async (e) => {
+    const gymForm = document.getElementById('gym-form');
+    gymForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const status = document.getElementById('g-status');
-      const name = document.getElementById('g-name').value;
-      const gym = document.getElementById('g-gym').value;
-      const phone = document.getElementById('g-phone').value;
-      try {
-        await fetch('https://formsubmit.co/ajax/aetherovatesoftwaresolutions@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name, gym, phone, _subject: `New Gym Software Inquiry: ${gym}` })
-        });
-      } catch (err) {}
-      status.className = 'p-3 rounded-xl text-xs font-semibold bg-orange-50 text-orange-800 border border-orange-200 block';
-      status.innerHTML = `🎉 Thank you ${name}! Your requirements for <strong>${gym}</strong> have been sent to our Gmail inbox.`;
+      await window.AetherovateNotify.submitLead({
+        form: gymForm,
+        alertBox: document.getElementById('g-status'),
+        submitBtn: document.getElementById('g-submit-btn'),
+        data: {
+          name: document.getElementById('g-name').value.trim(),
+          company: document.getElementById('g-gym').value.trim(),
+          phone: document.getElementById('g-phone').value.trim(),
+          service: 'Gym & Salon Membership System'
+        }
+      });
     });
   </script>
 </body>

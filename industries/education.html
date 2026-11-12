@@ -139,12 +139,12 @@
     <div class="max-w-2xl mx-auto px-4">
       <div class="glass-card p-8 border-2 border-indigo-200 shadow-2xl text-center">
         <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Get Institute Software Blueprint</h3>
-        <p class="text-xs text-slate-600 mb-6">Delivered directly to our Gmail inbox at <code>aetherovatesoftwaresolutions@gmail.com</code>.</p>
+        <p class="text-xs text-slate-600 mb-6">Delivered directly to our Gmail inbox at <code>aetherovatesoftwaresolution@gmail.com</code> &amp; WhatsApp <code>+91 76079 19233</code>.</p>
         <form id="edu-form" class="space-y-4 text-left">
           <input type="text" id="ed-name" required placeholder="Director / Principal Name" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-indigo-500 focus:bg-white outline-none shadow-xs">
           <input type="text" id="ed-inst" required placeholder="Institute / Coaching Name" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-indigo-500 focus:bg-white outline-none shadow-xs">
           <input type="tel" id="ed-phone" required placeholder="WhatsApp Number" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-indigo-500 focus:bg-white outline-none shadow-xs">
-          <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-extrabold text-xs shadow-lg transition-all">Submit & Send To Gmail</button>
+          <button type="submit" id="ed-submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-extrabold text-xs shadow-lg transition-all">Submit to Gmail &amp; Mobile (+91 76079 19233)</button>
           <div id="ed-status" class="hidden p-3 rounded-xl text-xs text-center"></div>
         </form>
       </div>
@@ -158,23 +158,23 @@
     </div>
   </footer>
 
+  <script src="../notifications.js"></script>
   <script>
     lucide.createIcons();
-    document.getElementById('edu-form').addEventListener('submit', async (e) => {
+    const eduForm = document.getElementById('edu-form');
+    eduForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const status = document.getElementById('ed-status');
-      const name = document.getElementById('ed-name').value;
-      const inst = document.getElementById('ed-inst').value;
-      const phone = document.getElementById('ed-phone').value;
-      try {
-        await fetch('https://formsubmit.co/ajax/aetherovatesoftwaresolutions@gmail.com', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name, inst, phone, _subject: `New Education Software Inquiry: ${inst}` })
-        });
-      } catch (err) {}
-      status.className = 'p-3 rounded-xl text-xs font-semibold bg-indigo-50 text-indigo-800 border border-indigo-200 block';
-      status.innerHTML = `🎉 Thank you ${name}! Your requirements for <strong>${inst}</strong> have been sent to our Gmail inbox.`;
+      await window.AetherovateNotify.submitLead({
+        form: eduForm,
+        alertBox: document.getElementById('ed-status'),
+        submitBtn: document.getElementById('ed-submit-btn'),
+        data: {
+          name: document.getElementById('ed-name').value.trim(),
+          company: document.getElementById('ed-inst').value.trim(),
+          phone: document.getElementById('ed-phone').value.trim(),
+          service: 'Education & Coaching Software'
+        }
+      });
     });
   </script>
 </body>
