@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare & Hospital Management Software | Aetherovate</title>
+  <meta name="description" content="Custom software solutions for hospitals, clinics, and doctors. OPD Token display, WhatsApp prescription bot, and patient lab report portal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
+          colors: { brand: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 900: '#1e3a8a' } }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="icon" type="image/jpeg" href="../assets/aetherovate-logo.jpg">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="text-slate-900 antialiased selection:bg-brand-600 selection:text-white glass-grid-bg">
+
+  <!-- ANIMATED AURORA FROSTED GLASS CANVAS -->
+  <div class="aurora-canvas" aria-hidden="true">
+    <div class="aurora-orb aurora-orb-1"></div>
+    <div class="aurora-orb aurora-orb-2"></div>
+    <div class="aurora-orb aurora-orb-3"></div>
+  </div>
+
+  <!-- GLASS HEADER -->
+  <header class="sticky top-0 z-50 glass-surface border-b border-white/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 text-xs font-extrabold text-slate-700 hover:text-brand-700 transition-colors">
+        <span class="w-8 h-8 rounded-xl overflow-hidden bg-slate-900 border border-brand-200 shadow-xs shrink-0">
+          <img src="../assets/aetherovate-logo.jpg" onerror="this.onerror=null;this.src='file:///C:/Users/dell/.gemini/antigravity/brain/dc79335b-2f79-4dfe-b27c-db1217737066/.user_uploaded/media_1794466602508_d3a7b56e.jpg';" alt="Aetherovate" class="w-full h-full object-cover object-[50%_26%] scale-[1.85]">
+        </span>
+        <i data-lucide="arrow-left" class="w-4 h-4 text-brand-600"></i>
+        <span>Back to Aetherovate Home</span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-extrabold text-teal-800 bg-teal-100/90 px-3 py-1 rounded-full border border-teal-200">
+          🏥 Healthcare Suite
+        </span>
+        <a href="#contact-spec" class="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-teal-600 hover:from-brand-700 hover:to-teal-700 text-white text-xs font-bold shadow-md transition-all">
+          Request Healthcare Scope
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-16 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-surface text-teal-800 text-xs font-extrabold uppercase tracking-wider mb-5">
+        <span class="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
+        <span>Verified Hospital Architecture</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+        Hospital, Clinic & Doctor <br>
+        <span class="text-gradient-brand">Management & WhatsApp Automation</span>
+      </h1>
+      <p class="text-base text-slate-600 max-w-2xl mx-auto leading-relaxed mb-9 font-medium">
+        Eliminate clinic waiting room chaos. Automate patient appointment bookings, queue tokens, digital prescriptions, and lab report delivery in real-time.
+      </p>
+
+      <!-- METRIC HIGHLIGHTS -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-left">
+        <div class="glass-card p-4">
+          <p class="text-[10px] font-bold uppercase text-slate-500">Patient Growth</p>
+          <p class="text-xl font-extrabold text-teal-700 mt-0.5">+340%</p>
+          <p class="text-[11px] text-slate-600 font-medium">Online OPD Bookings</p>
+        </div>
+        <div class="glass-card p-4">
+          <p class="text-[10px] font-bold uppercase text-slate-500">Waiting Time</p>
+          <p class="text-xl font-extrabold text-emerald-700 mt-0.5">-75%</p>
+          <p class="text-[11px] text-slate-600 font-medium">Reception Crowd Reduced</p>
+        </div>
+        <div class="glass-card p-4">
+          <p class="text-[10px] font-bold uppercase text-slate-500">Delivery Sprint</p>
+          <p class="text-xl font-extrabold text-slate-900 mt-0.5">7-12 Days</p>
+          <p class="text-[11px] text-slate-600 font-medium">Fully Configured</p>
+        </div>
+        <div class="glass-card p-4">
+          <p class="text-[10px] font-bold uppercase text-slate-500">Code Ownership</p>
+          <p class="text-xl font-extrabold text-brand-700 mt-0.5">100% IP</p>
+          <p class="text-[11px] text-slate-600 font-medium">HIPAA Compliant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS MODEL COMPARISON (MANUAL VS AETHEROVATE) -->
+  <section class="py-12 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Manual Clinic vs Aetherovate Automated System</h2>
+        <p class="text-xs text-slate-600 mt-1 font-medium">Why modern clinics are upgrading to our custom software</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- MANUAL PROBLEM -->
+        <div class="glass-card p-6 border-2 border-red-200/80 bg-red-50/45">
+          <div class="flex items-center gap-2 text-red-700 text-sm font-extrabold uppercase tracking-wider mb-3">
+            <i data-lucide="x-circle" class="w-5 h-5"></i>
+            <span>The Manual Way (Old & Broken)</span>
+          </div>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-700 font-medium">
+            <li class="flex items-start gap-2">
+              <span class="text-red-600 font-bold">•</span>
+              <span>Patients wait 1-2 hours in crowded waiting rooms causing frustration and walkaways.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-600 font-bold">•</span>
+              <span>Receptionist is constantly overwhelmed by phone calls while handling in-person patients.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-600 font-bold">•</span>
+              <span>Paper prescriptions get torn, misplaced, or handwritten notes are illegible at pharmacies.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-600 font-bold">•</span>
+              <span>Zero follow-up automation: Patients forget review consultations and medicines.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- AETHEROVATE AUTOMATED -->
+        <div class="glass-card p-6 border-2 border-teal-200/90 bg-teal-50/50">
+          <div class="flex items-center gap-2 text-teal-800 text-sm font-extrabold uppercase tracking-wider mb-3">
+            <i data-lucide="check-circle" class="w-5 h-5 text-teal-600"></i>
+            <span>The Aetherovate Way (Fast & Automated)</span>
+          </div>
+          <ul class="space-y-3 text-xs sm:text-sm text-slate-800 font-medium">
+            <li class="flex items-start gap-2">
+              <span class="text-teal-600 font-bold">✓</span>
+              <span>Patients scan QR at entrance or WhatsApp ahead to receive a live digital queue token on their phone.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-teal-600 font-bold">✓</span>
+              <span>TV screen in waiting room updates automatically in real-time as the doctor calls the next patient.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-teal-600 font-bold">✓</span>
+              <span>Doctor clicks 1 button to generate a clean digital PDF prescription sent straight to patient's WhatsApp.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-teal-600 font-bold">✓</span>
+              <span>Automated appointment reminders sent 24 hours in advance, reducing no-shows by 85%.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 SPECIALIZED MODULES INCLUDED -->
+  <section class="py-12 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">4 Specialized Modules Built For Your Hospital</h2>
+        <p class="text-xs text-slate-600 mt-1 font-medium">Modular components engineered with zero bloat and high-speed uptime</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Module 1 -->
+        <div class="glass-app-tile">
+          <div class="tile-top-beam bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-400"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold mb-4 border border-teal-200 icon-float">
+              <i data-lucide="tv" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">1. Live OPD Queue & TV Token Screen</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              A beautiful TV screen interface showing the current token called, doctor room number, and estimated wait times. Patients can step outside to grab tea and check their queue position live on their mobile phone.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Live TV WebApp</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Audio Chime</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">WhatsApp Sync</span>
+          </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="glass-app-tile">
+          <div class="tile-top-beam bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-400"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold mb-4 border border-teal-200 icon-float">
+              <i data-lucide="message-square" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">2. WhatsApp 24/7 Appointment Booking Bot</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Patients send a message on WhatsApp, pick their preferred doctor and time slot, and receive instant confirmation with Google Maps location pin and booking token. No human receptionist required.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">WhatsApp Cloud API</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Calendar Sync</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Zero Missed Leads</span>
+          </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="glass-app-tile">
+          <div class="tile-top-beam bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-400"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold mb-4 border border-teal-200 icon-float">
+              <i data-lucide="file-text" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">3. Doctor Digital Prescription & EMR Maker</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Doctors can click frequently used medicines or type dosage in seconds. Generates an authorized digital Rx with hospital letterhead, doctor signature, and QR verification code sent straight to the patient.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">1-Click PDF Rx</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Patient History</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Pharmacy Integration</span>
+          </div>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="glass-app-tile">
+          <div class="tile-top-beam bg-gradient-to-r from-teal-400 via-cyan-500 to-teal-400"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold mb-4 border border-teal-200 icon-float">
+              <i data-lucide="microscope" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">4. Diagnostic Pathology Lab Reports Portal</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Once blood/scan tests are completed, technicians upload the report. Patient gets an automated WhatsApp notification: "Your test report is ready, tap here to download." Saves clinic phone calls and printing costs.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Encrypted AWS S3</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Instant SMS Alert</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-teal-200 text-teal-800">Zero Paper Waste</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECT ACTION & INQUIRY -->
+  <section id="contact-spec" class="py-16 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card p-8 border-2 border-teal-200 shadow-2xl">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs font-extrabold text-teal-700 uppercase tracking-widest">Get Hospital Architecture & Demo</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Request A Healthcare System Scope</h3>
+          <p class="text-xs text-slate-600 mt-2">Our Solutions Architect will prepare a customized feature list and budget quote within 24 hours.</p>
+        </div>
+
+        <form id="healthcare-inquiry-form" class="space-y-4 max-w-xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Doctor / Administrator Name *</label>
+              <input type="text" id="hc-name" required placeholder="e.g. Dr. Rajesh Gupta" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-teal-500 focus:bg-white outline-none shadow-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Hospital / Clinic Name *</label>
+              <input type="text" id="hc-clinic" required placeholder="e.g. Apex Multispecialty Hospital" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-teal-500 focus:bg-white outline-none shadow-xs">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Phone / WhatsApp Number *</label>
+              <input type="tel" id="hc-phone" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-teal-500 focus:bg-white outline-none shadow-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Number of Doctors / Daily Patients</label>
+              <input type="text" id="hc-volume" placeholder="e.g. 4 Doctors, ~50 patients/day" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-teal-500 focus:bg-white outline-none shadow-xs">
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Submit Requirements & Send To Gmail</span>
+          </button>
+
+          <div id="hc-status" class="hidden p-3 rounded-xl text-xs font-medium text-center"></div>
+
+          <div class="pt-4 text-center border-t border-slate-200/80 flex items-center justify-center gap-3">
+            <span class="text-xs text-slate-600">Prefer immediate chat?</span>
+            <a href="https://wa.me/917607919233?text=Hello%20Aetherovate,%20I%20want%20to%20discuss%20hospital/clinic%20software." target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1">
+              <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+              <span>Connect on WhatsApp</span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="glass-surface border-t border-white/90 text-slate-600 py-8 text-center text-xs">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2026 Aetherovate Software Solutions. All rights reserved. • 100% Client Code Ownership Guaranteed.</p>
+      <a href="../index.html" class="font-bold text-brand-700 hover:underline">&larr; Explore All 8 Business Suites</a>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    document.getElementById('healthcare-inquiry-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('hc-status');
+      const name = document.getElementById('hc-name').value;
+      const clinic = document.getElementById('hc-clinic').value;
+      const phone = document.getElementById('hc-phone').value;
+      const volume = document.getElementById('hc-volume').value;
+
+      try {
+        await fetch('https://formsubmit.co/ajax/aetherovatesoftwaresolutions@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name, clinic, phone, volume,
+            _subject: `New Hospital Software Inquiry: ${clinic}`
+          })
+        });
+      } catch (err) {}
+
+      status.className = 'p-4 rounded-xl text-xs font-semibold text-center bg-teal-50 text-teal-800 border border-teal-200 block';
+      status.innerHTML = `🎉 Thank you Dr. ${name}! Your requirements for <strong>${clinic}</strong> have been delivered to our engineering inbox (<code>aetherovatesoftwaresolutions@gmail.com</code>). We will contact you within 24 hours.`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Aetherovate Software Solutions — Engineering Studio & Leadership</title>
+  <link rel="icon" type="image/jpeg" href="assets/aetherovate-logo.jpg">
+  <meta name="description" content="Meet Aetherovate Software Solutions (Lucknow, U.P., India) — led by CEO Shivam and Founder Ajit. Learn how our 5 specialized engineering desks build scalable web apps, 3D studios, POS billing, and AI automation.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-900 antialiased selection:bg-brand-600 selection:text-white glass-grid-bg">
+
+  <!-- ANIMATED AURORA FROSTED GLASS CANVAS -->
+  <div class="aurora-canvas" aria-hidden="true">
+    <div class="aurora-orb aurora-orb-1"></div>
+    <div class="aurora-orb aurora-orb-2"></div>
+    <div class="aurora-orb aurora-orb-3"></div>
+  </div>
+
+  <!-- TOP STATUS BAR -->
+  <div class="bg-gradient-to-r from-brand-700 via-indigo-600 to-cyan-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-sm flex flex-wrap items-center justify-center gap-2 relative z-50">
+    <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-white/20 text-white backdrop-blur-sm border border-white/25">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-ping"></span>
+      ABOUT AETHEROVATE
+    </span>
+    <span>Headquartered in Lucknow, U.P., India • Building Enterprise Software Worldwide</span>
+    <a href="index.html#virtual-office-3d" class="underline underline-offset-4 hover:text-cyan-100 font-bold ml-1">Tour 3D Office &rarr;</a>
+  </div>
+
+  <!-- GLASS NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 glass-surface border-b border-white/80" id="main-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-2xl overflow-hidden bg-slate-900 border border-brand-200/80 shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300 shrink-0">
+          <img
+            src="assets/aetherovate-logo.jpg"
+            onerror="this.onerror=null;this.src='file:///C:/Users/dell/.gemini/antigravity/brain/dc79335b-2f79-4dfe-b27c-db1217737066/.user_uploaded/media_1794466602508_d3a7b56e.jpg';"
+            alt="Aetherovate Logo"
+            class="w-full h-full object-cover object-[50%_26%] scale-[1.85]"
+          >
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl font-extrabold tracking-tight text-slate-900">Aetherovate</span>
+            <span class="text-[10px] font-extrabold text-brand-700 bg-brand-100/90 px-2 py-0.5 rounded-md border border-brand-200">SOFTWARE</span>
+          </div>
+          <p class="text-[10px] text-slate-500 font-semibold tracking-wider uppercase">From Vision To Live Scale</p>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-slate-600">
+        <a href="index.html" class="hover:text-brand-600 transition-colors">Home</a>
+        <a href="about.html" class="text-brand-700 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+          About Us
+        </a>
+        <a href="index.html#virtual-office-3d" class="hover:text-brand-600 transition-colors">3D Office</a>
+        <a href="index.html#industries" class="hover:text-brand-600 transition-colors">Industry Apps</a>
+        <a href="index.html#projects" class="hover:text-brand-600 transition-colors">Live Projects</a>
+        <a href="#leadership" class="hover:text-brand-600 transition-colors">Leadership</a>
+        <a href="#about-contact" class="hover:text-brand-600 transition-colors">Contact</a>
+      </nav>
+
+      <!-- ACTION CTAS -->
+      <div class="flex items-center gap-2.5">
+        <a href="mailto:aetherovatesoftwaresolutions@gmail.com?subject=Project%20Inquiry%20from%20About%20Page" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-white/90 bg-white/75 hover:bg-white text-slate-800 text-xs font-bold shadow-sm transition-all">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-600"></i>
+          <span>Gmail</span>
+        </a>
+        <a href="https://wa.me/917607919233?text=Hello%20Aetherovate,%20I%20visited%20your%20About%20page%20and%20want%20to%20discuss%20a%20project." target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-emerald-200 bg-emerald-50/90 hover:bg-emerald-100 text-emerald-800 text-xs font-bold shadow-sm transition-all">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="#about-contact" class="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 text-white text-xs font-bold shadow-lg shadow-brand-500/25 transition-all hover:-translate-y-0.5">
+          <span>Start Project</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO: WHO WE ARE -->
+  <section class="pt-12 pb-14 sm:pt-16 sm:pb-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-brand-200 text-xs font-extrabold text-brand-700 uppercase tracking-wider shadow-sm">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-600"></i>
+            Aetherovate Software Solutions • Innovation Hub
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.35rem] font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+            We Turn Complex Business Workflows Into <span class="text-gradient-brand">Live, Scalable Software.</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
+            Founded in <strong>Lucknow, Uttar Pradesh, India</strong>, Aetherovate Software Solutions is a full-stack product engineering studio. Instead of giving businesses rigid templates, we build tailored web platforms, interactive 3D spatial interfaces, GST billing POS engines, and WhatsApp-automated workflows that deliver real revenue growth.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="glass-card p-4 text-center">
+              <div class="text-2xl font-extrabold text-brand-700">5</div>
+              <div class="text-[11px] font-bold text-slate-600 mt-0.5">Engineering Desks</div>
+            </div>
+            <div class="glass-card p-4 text-center">
+              <div class="text-2xl font-extrabold text-indigo-700">25+</div>
+              <div class="text-[11px] font-bold text-slate-600 mt-0.5">Specialists & QA</div>
+            </div>
+            <div class="glass-card p-4 text-center">
+              <div class="text-2xl font-extrabold text-emerald-700">100%</div>
+              <div class="text-[11px] font-bold text-slate-600 mt-0.5">Code Ownership</div>
+            </div>
+            <div class="glass-card p-4 text-center">
+              <div class="text-2xl font-extrabold text-cyan-700">24/7</div>
+              <div class="text-[11px] font-bold text-slate-600 mt-0.5">Live Support</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="glass-card p-5 sm:p-6 shadow-2xl space-y-5">
+            <div class="rounded-2xl overflow-hidden border border-white shadow-lg bg-slate-900 relative">
+              <img
+                src="assets/aetherovate-logo.jpg"
+                onerror="this.onerror=null;this.src='file:///C:/Users/dell/.gemini/antigravity/brain/dc79335b-2f79-4dfe-b27c-db1217737066/.user_uploaded/media_1794466602508_d3a7b56e.jpg';"
+                alt="Aetherovate Software Solutions Official Identity"
+                class="w-full h-56 object-cover object-center"
+              >
+              <div class="absolute bottom-3 left-3 right-3 px-3 py-2 rounded-xl bg-slate-950/75 backdrop-blur-md border border-white/15 flex items-center justify-between text-white">
+                <div>
+                  <div class="text-[10px] font-bold text-cyan-300 uppercase tracking-wider">Headquarters</div>
+                  <div class="text-xs font-extrabold">Lucknow, U.P., India</div>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-[10px] font-extrabold">Global Delivery</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3.5 rounded-xl bg-white/80 border border-white shadow-xs">
+                <div class="text-[10px] font-extrabold text-brand-700 uppercase">Production Live</div>
+                <div class="font-extrabold text-slate-900 mt-0.5">kontractor.in</div>
+                <div class="text-[11px] text-slate-500">3D Construction Tech</div>
+              </div>
+              <div class="p-3.5 rounded-xl bg-white/80 border border-white shadow-xs">
+                <div class="text-[10px] font-extrabold text-amber-700 uppercase">Production Live</div>
+                <div class="font-extrabold text-slate-900 mt-0.5">solarscienceportal.in</div>
+                <div class="text-[11px] text-slate-500">Solar EPC Tracking</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION, VISION & CORE PROMISE -->
+  <section class="py-12 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="glass-card p-6 sm:p-7 space-y-3 reveal-on-scroll">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-600 to-indigo-600 text-white flex items-center justify-center shadow-md">
+            <i data-lucide="target" class="w-5 h-5"></i>
+          </div>
+          <h2 class="text-lg font-extrabold text-slate-900">Our Mission</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Empower clinics, retail chains, construction builders, solar EPC firms, schools, and logistics companies with fast, transparent, automation-first software that removes manual paperwork forever.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 sm:p-7 space-y-3 reveal-on-scroll">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-md">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+          </div>
+          <h2 class="text-lg font-extrabold text-slate-900">Our Vision</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Become India’s most trusted product-grade software studio from Uttar Pradesh—setting global benchmarks in React/Next.js speed, interactive 3D visualizations, and reliable backend engineering.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 sm:p-7 space-y-3 reveal-on-scroll">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <h2 class="text-lg font-extrabold text-slate-900">Our Client Promise</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Zero vendor lock-in. You receive full source code, GitHub repository access, cloud deployment documentation, database control, and responsive WhatsApp &amp; phone support after launch.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP: SHIVAM & AJIT -->
+  <section id="leadership" class="py-16 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal-on-scroll">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-brand-600">Executive Leadership</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1">Meet The Leaders Driving Aetherovate</h2>
+        <p class="text-slate-600 mt-2 text-sm">Every enterprise blueprint, architecture review, and final delivery passes directly through our leadership desk.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- SHIVAM - CEO -->
+        <div class="glass-card p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-lg reveal-on-scroll">
+          <div class="w-36 h-44 rounded-2xl overflow-hidden bg-slate-900 shadow-lg shrink-0 border-2 border-white relative">
+            <img
+              src="assets/ceo-shivam.jpg"
+              onerror="this.onerror=null;this.src='file:///C:/Users/dell/.gemini/antigravity/brain/dc79335b-2f79-4dfe-b27c-db1217737066/.user_uploaded/media_1794466332659_0dd7bebb.jpg';"
+              alt="Shivam - Chief Executive Officer (CEO) at Aetherovate"
+              class="w-full h-full object-cover object-top"
+            >
+          </div>
+          <div class="text-center sm:text-left space-y-2.5">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-100 border border-brand-200 text-brand-700 text-[10px] font-extrabold uppercase tracking-wider">Chief Executive Officer (CEO)</div>
+            <h3 class="text-2xl font-extrabold text-slate-900">Shivam</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Leads client partnerships, product roadmapping, commercial strategy, and quality milestones—ensuring every software build solves measurable business bottlenecks and launches on schedule.
+            </p>
+            <div class="pt-1 flex flex-wrap items-center justify-center sm:justify-start gap-3">
+              <a href="https://wa.me/917607919233" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-xs hover:bg-emerald-700 transition-colors">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                <span>+91 76079 19233</span>
+              </a>
+              <a href="mailto:aetherovatesoftwaresolutions@gmail.com?subject=Message%20for%20Shivam%20(CEO)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 transition-colors">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-600"></i>
+                <span>Email CEO</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AJIT - FOUNDER -->
+        <div class="glass-card p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 shadow-lg reveal-on-scroll">
+          <div class="w-36 h-44 rounded-2xl overflow-hidden bg-slate-900 shadow-lg shrink-0 border-2 border-white relative">
+            <img
+              src="assets/founder-ajit.webp"
+              onerror="this.onerror=null;this.src='file:///C:/Users/dell/.gemini/antigravity/brain/dc79335b-2f79-4dfe-b27c-db1217737066/.user_uploaded/media_1794466427358_f07077ac.webp';"
+              alt="Ajit - Founder & Lead Architect at Aetherovate"
+              class="w-full h-full object-cover object-[50%_12%]"
+            >
+          </div>
+          <div class="text-center sm:text-left space-y-2.5">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-700 text-[10px] font-extrabold uppercase tracking-wider">Founder &amp; Lead Architect</div>
+            <h3 class="text-2xl font-extrabold text-slate-900">Ajit</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Drives technical architecture across our 5 engineering desks—overseeing full-stack scalability, high-speed React interfaces, Three.js interactive tools, and automated cloud databases.
+            </p>
+            <div class="pt-1 flex flex-wrap items-center justify-center sm:justify-start gap-3">
+              <a href="https://wa.me/917379247197" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-xs hover:bg-emerald-700 transition-colors">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                <span>+91 73792 47197</span>
+              </a>
+              <a href="mailto:aetherovatesoftwaresolutions@gmail.com?subject=Message%20for%20Ajit%20(Founder)" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 transition-colors">
+                <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-600"></i>
+                <span>Email Founder</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUR 5-DESK ENGINEERING PIPELINE & TECH STACK -->
+  <section class="py-12 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-10 reveal-on-scroll">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-indigo-600">How We Work</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-1">5 Specialized Desks. One Unified Pipeline.</h2>
+        <p class="text-slate-600 mt-2 text-sm">Every project moves sequentially through five dedicated teams so quality never drops.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="glass-card p-5 space-y-2 reveal-on-scroll">
+          <span class="text-[10px] font-mono font-extrabold text-pink-600">DESK 01</span>
+          <h3 class="text-sm font-extrabold text-slate-900">UI/UX &amp; Figma</h3>
+          <p class="text-xs text-slate-600">Interactive wireframes, frosted glass UI kits, and user journeys built around speed.</p>
+        </div>
+        <div class="glass-card p-5 space-y-2 reveal-on-scroll">
+          <span class="text-[10px] font-mono font-extrabold text-blue-600">DESK 02</span>
+          <h3 class="text-sm font-extrabold text-slate-900">Frontend &amp; 3D</h3>
+          <p class="text-xs text-slate-600">React, Next.js, Tailwind CSS, GSAP animations, and WebGL/Three.js studios.</p>
+        </div>
+        <div class="glass-card p-5 space-y-2 reveal-on-scroll">
+          <span class="text-[10px] font-mono font-extrabold text-emerald-600">DESK 03</span>
+          <h3 class="text-sm font-extrabold text-slate-900">Backend &amp; API</h3>
+          <p class="text-xs text-slate-600">Node.js, Python, PostgreSQL, MongoDB, payment gateways &amp; WhatsApp automation.</p>
+        </div>
+        <div class="glass-card p-5 space-y-2 reveal-on-scroll">
+          <span class="text-[10px] font-mono font-extrabold text-amber-600">DESK 04</span>
+          <h3 class="text-sm font-extrabold text-slate-900">QA &amp; Security</h3>
+          <p class="text-xs text-slate-600">Cross-device mobile testing, load verification, API hardening, and zero-bug audits.</p>
+        </div>
+        <div class="glass-card p-5 space-y-2 reveal-on-scroll">
+          <span class="text-[10px] font-mono font-extrabold text-indigo-600">DESK 05</span>
+          <h3 class="text-sm font-extrabold text-slate-900">Launch &amp; Support</h3>
+          <p class="text-xs text-slate-600">Live domain launch, SSL setup, staff training call, and 24/7 WhatsApp support.</p>
+        </div>
+      </div>
+
+      <!-- TECH BADGES -->
+      <div class="mt-8 glass-card p-5 flex flex-wrap items-center justify-center gap-3 text-xs font-bold text-slate-700 reveal-on-scroll">
+        <span class="text-slate-400 uppercase tracking-wider text-[10px] font-extrabold mr-1">Core Stack:</span>
+        <span class="px-3 py-1 rounded-full bg-white border border-slate-200">React &amp; Next.js</span>
+        <span class="px-3 py-1 rounded-full bg-white border border-slate-200">TypeScript</span>
+        <span class="px-3 py-1 rounded-full bg-white border border-slate-200">Three.js / 3D WebGL</span>
+        <span class="px-3 py-1 rounded-full bg-white border border-slate-200">Node.js &amp; Python</span>
+        <span class="px-3 py-1 rounded-full bg-white border border-slate-200">PostgreSQL &amp; MongoDB</span>
+        <span class="px-3 py-1 rounded-full bg-white border border-slate-200">WhatsApp &amp; Email APIs</span>
+        <span class="px-3 py-1 rounded-full bg-white border border-slate-200">GST POS Engines</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (REAL-TIME EMAIL + MOBILE WHATSAPP DELIVERY) -->
+  <section id="about-contact" class="py-16 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="glass-card p-6 sm:p-10 shadow-2xl reveal-on-scroll">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100/90 border border-blue-200 text-xs font-extrabold text-brand-700 uppercase tracking-wider mb-2">
+            <i data-lucide="send" class="w-3.5 h-3.5 text-brand-600"></i>
+            Instant Email + WhatsApp Mobile Alert
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Work With Aetherovate</h3>
+          <p class="text-xs text-slate-600 mt-2">Your inquiry is sent directly to <strong>aetherovatesoftwaresolutions@gmail.com</strong> and routed to our mobile WhatsApp desk (<strong>+91 76079 19233</strong>).</p>
+        </div>
+
+        <form id="project-contact-form" name="aetherovate-inquiry" data-netlify="true" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Your Name *</label>
+              <input type="text" id="form-name" name="name" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-2.5 rounded-xl border border-white bg-white/80 text-slate-900 text-xs focus:border-brand-500 focus:bg-white outline-none shadow-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Business / Company Name *</label>
+              <input type="text" id="form-company" name="company" required placeholder="e.g. Apex Health Clinic" class="w-full px-4 py-2.5 rounded-xl border border-white bg-white/80 text-slate-900 text-xs focus:border-brand-500 focus:bg-white outline-none shadow-xs">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Phone / WhatsApp *</label>
+              <input type="tel" id="form-phone" name="phone" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl border border-white bg-white/80 text-slate-900 text-xs focus:border-brand-500 focus:bg-white outline-none shadow-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Your Email Address</label>
+              <input type="email" id="form-email" name="email" placeholder="rahul@business.com" class="w-full px-4 py-2.5 rounded-xl border border-white bg-white/80 text-slate-900 text-xs focus:border-brand-500 focus:bg-white outline-none shadow-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Service Needed *</label>
+              <select id="form-service" name="service" class="w-full px-4 py-2.5 rounded-xl border border-white bg-white/80 text-slate-900 text-xs focus:border-brand-500 focus:bg-white outline-none shadow-xs">
+                <option value="Custom Business Software">Custom Business Software</option>
+                <option value="Hospital / Clinic OPD Software">Hospital / Clinic Software</option>
+                <option value="Supermarket GST POS & Billing">Supermarket GST POS & Billing</option>
+                <option value="Real Estate 3D Portal">Real Estate 3D Portal</option>
+                <option value="Gym & Salon Membership System">Gym & Salon Membership System</option>
+                <option value="School / Coaching Fees Portal">School / Coaching Fees Portal</option>
+                <option value="Restaurant Online Ordering">Restaurant Digital Menu & POS</option>
+                <option value="Logistics Fleet & Bilty System">Logistics Fleet & Bilty System</option>
+                <option value="High-Speed Business Website">High-Speed Business Website</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Project Details / Requirements</label>
+            <textarea id="form-message" name="message" rows="3" placeholder="Tell Shivam & Ajit what you want to build or automate..." class="w-full px-4 py-2.5 rounded-xl border border-white bg-white/80 text-slate-900 text-xs focus:border-brand-500 focus:bg-white outline-none shadow-xs"></textarea>
+          </div>
+
+          <label class="flex items-center gap-2.5 p-3 rounded-xl bg-emerald-50/80 border border-emerald-200 cursor-pointer text-xs font-semibold text-emerald-900">
+            <input type="checkbox" id="form-whatsapp-notify" checked class="w-4 h-4 accent-emerald-600 rounded">
+            <span>Also send instant WhatsApp alert directly to Aetherovate Mobile (<strong>+91 76079 19233</strong>)</span>
+          </label>
+
+          <button type="submit" id="form-submit-btn" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 text-white font-extrabold text-xs shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Send Inquiry to Gmail &amp; Mobile (+91 76079 19233)</span>
+          </button>
+
+          <div id="form-status-alert" class="hidden p-3 rounded-xl text-xs font-medium text-center"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FROSTED GLASS FOOTER -->
+  <footer class="glass-surface border-t border-white/90 text-slate-600 pt-14 pb-10 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-200/80">
+
+        <!-- BRAND & SOCIAL CHANNELS -->
+        <div class="space-y-3 lg:col-span-1">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl overflow-hidden bg-slate-900 border border-white shadow-sm shrink-0">
+              <img
+                src="assets/aetherovate-logo.jpg"
+                onerror="this.onerror=null;this.src='file:///C:/Users/dell/.gemini/antigravity/brain/dc79335b-2f79-4dfe-b27c-db1217737066/.user_uploaded/media_1794466602508_d3a7b56e.jpg';"
+                alt="Aetherovate Brand Icon"
+                class="w-full h-full object-cover object-[50%_26%] scale-[1.85]"
+              >
+            </div>
+            <div>
+              <span class="text-base font-extrabold text-slate-900 tracking-tight block leading-none">Aetherovate</span>
+              <span class="text-[10px] font-bold text-brand-700 tracking-wide">From Vision To Live Scale</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Engineering custom web applications, 3D dashboards, POS billing engines, and AI automation for ambitious businesses in India &amp; worldwide.
+          </p>
+          <div class="flex flex-wrap items-center gap-2 pt-1">
+            <a href="https://www.instagram.com/aetherovatesoftware?obrf=MTN4M3lyMHc2N2N0Mw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white text-[11px] font-extrabold shadow-sm hover:scale-105 transition-transform">
+              <span>Instagram</span>
+            </a>
+            <a href="https://youtube.com/@aetherovatesoftwaretechnology?si=5bKV6kvceZr3sc1y" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-[11px] font-extrabold shadow-sm hover:scale-105 transition-transform">
+              <span>YouTube</span>
+            </a>
+            <a href="https://wa.me/917607919233" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-extrabold shadow-sm hover:scale-105 transition-transform">
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- COMPANY NAVIGATION -->
+        <div>
+          <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 mb-3">Company</h4>
+          <ul class="space-y-1.5 text-xs text-slate-600 font-medium">
+            <li><a href="index.html" class="hover:text-brand-600 transition-colors">🏠 Home &amp; 3D Office</a></li>
+            <li><a href="about.html" class="text-brand-700 font-bold">🏢 About Aetherovate</a></li>
+            <li><a href="index.html#industries" class="hover:text-brand-600 transition-colors">🧩 Industry Software</a></li>
+            <li><a href="index.html#projects" class="hover:text-brand-600 transition-colors">🚀 Live Portals</a></li>
+            <li><a href="#leadership" class="hover:text-brand-600 transition-colors">👥 CEO &amp; Founder</a></li>
+          </ul>
+        </div>
+
+        <!-- DEDICATED INDUSTRY PAGES -->
+        <div>
+          <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 mb-3">Solutions</h4>
+          <ul class="space-y-1.5 text-xs text-slate-600 font-medium">
+            <li><a href="industries/healthcare.html" class="hover:text-brand-600 transition-colors">🏥 Hospitals &amp; Clinics</a></li>
+            <li><a href="industries/retail.html" class="hover:text-brand-600 transition-colors">🛒 Supermarket &amp; Retail</a></li>
+            <li><a href="industries/realestate.html" class="hover:text-brand-600 transition-colors">🏢 Real Estate &amp; Builders</a></li>
+            <li><a href="industries/education.html" class="hover:text-brand-600 transition-colors">📚 Schools &amp; Coaching</a></li>
+            <li><a href="industries/logistics.html" class="hover:text-brand-600 transition-colors">🚚 Logistics &amp; Fleet</a></li>
+          </ul>
+        </div>
+
+        <!-- CONTACT (REAL DATA) -->
+        <div>
+          <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 mb-3">Direct Connect</h4>
+          <ul class="space-y-2 text-xs text-slate-700 font-medium">
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+              <span><strong>Lucknow, U.P., India</strong></span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-600 shrink-0 mt-0.5"></i>
+              <a href="mailto:aetherovatesoftwaresolutions@gmail.com" class="hover:text-brand-700 break-all font-semibold">aetherovatesoftwaresolutions@gmail.com</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+              <div class="space-y-0.5">
+                <a href="tel:+917607919233" class="block hover:text-emerald-700 font-bold">+91 76079 19233</a>
+                <a href="tel:+917379247197" class="block hover:text-emerald-700 font-bold">+91 73792 47197</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-medium">
+        <p>© 2026 Aetherovate Software Solutions. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-emerald-700 font-bold">
+          <span>✓ 100% Client Code Ownership Guaranteed</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

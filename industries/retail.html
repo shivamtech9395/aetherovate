@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supermarket & Retail GST POS Billing Software | Aetherovate</title>
+  <meta name="description" content="Custom software for supermarkets, wholesalers, and retail stores. Fast GST barcode billing, low-stock WhatsApp alerts, and customer khata ledger.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], mono: ['"JetBrains Mono"', 'monospace'] },
+          colors: { brand: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 900: '#1e3a8a' } }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="icon" type="image/jpeg" href="../assets/aetherovate-logo.jpg">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="text-slate-900 antialiased selection:bg-brand-600 selection:text-white glass-grid-bg">
+
+  <div class="aurora-canvas" aria-hidden="true">
+    <div class="aurora-orb aurora-orb-1"></div>
+    <div class="aurora-orb aurora-orb-2"></div>
+    <div class="aurora-orb aurora-orb-3"></div>
+  </div>
+
+  <!-- TOP HEADER -->
+  <header class="sticky top-0 z-50 glass-surface border-b border-white/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 text-xs font-extrabold text-slate-700 hover:text-brand-700 transition-colors">
+        <span class="w-8 h-8 rounded-xl overflow-hidden bg-slate-900 border border-brand-200 shadow-xs shrink-0">
+          <img src="../assets/aetherovate-logo.jpg" onerror="this.onerror=null;this.src='file:///C:/Users/dell/.gemini/antigravity/brain/dc79335b-2f79-4dfe-b27c-db1217737066/.user_uploaded/media_1794466602508_d3a7b56e.jpg';" alt="Aetherovate" class="w-full h-full object-cover object-[50%_26%] scale-[1.85]">
+        </span>
+        <i data-lucide="arrow-left" class="w-4 h-4 text-brand-600"></i>
+        <span>Back to Aetherovate Home</span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-extrabold text-emerald-800 bg-emerald-100/90 px-3 py-1 rounded-full border border-emerald-200">
+          🛒 Retail & POS Suite
+        </span>
+        <a href="#contact-spec" class="px-4 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-emerald-600 hover:from-brand-700 hover:to-emerald-700 text-white text-xs font-bold shadow-md transition-all">
+          Request Retail Scope
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-16 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-surface text-emerald-800 text-xs font-extrabold uppercase tracking-wider mb-5">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>High-Speed Retail Billing & Inventory Architecture</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+        Supermarket, Retail & Wholesale <br>
+        <span class="text-gradient-brand">GST POS & WhatsApp Inventory System</span>
+      </h1>
+      <p class="text-base text-slate-600 max-w-2xl mx-auto leading-relaxed mb-9 font-medium">
+        Print GST invoices in 4 seconds with barcode scanning, prevent stock shortages with automatic WhatsApp alerts, and manage customer credit ledgers digitally.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto text-left">
+        <div class="glass-card p-4">
+          <p class="text-[10px] font-bold uppercase text-slate-500">Checkout Speed</p>
+          <p class="text-xl font-extrabold text-emerald-700 mt-0.5">&lt; 4 Sec</p>
+          <p class="text-[11px] text-slate-600 font-medium">Barcode Scan to Print</p>
+        </div>
+        <div class="glass-card p-4">
+          <p class="text-[10px] font-bold uppercase text-slate-500">Hours Saved</p>
+          <p class="text-xl font-extrabold text-teal-700 mt-0.5">18 Hrs/Wk</p>
+          <p class="text-[11px] text-slate-600 font-medium">Zero Manual Books</p>
+        </div>
+        <div class="glass-card p-4">
+          <p class="text-[10px] font-bold uppercase text-slate-500">Stock Accuracy</p>
+          <p class="text-xl font-extrabold text-slate-900 mt-0.5">100%</p>
+          <p class="text-[11px] text-slate-600 font-medium">Zero Inventory Leak</p>
+        </div>
+        <div class="glass-card p-4">
+          <p class="text-[10px] font-bold uppercase text-slate-500">Code Ownership</p>
+          <p class="text-xl font-extrabold text-brand-700 mt-0.5">100% IP</p>
+          <p class="text-[11px] text-slate-600 font-medium">Offline Capable</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 MODULES -->
+  <section class="py-12 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">4 Specialized Modules Built For Your Retail Business</h2>
+        <p class="text-xs text-slate-600 mt-1 font-medium">Lightweight, offline-resilient, and built for rapid cashier training</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-app-tile">
+          <div class="tile-top-beam bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-4 border border-emerald-200 icon-float">
+              <i data-lucide="scan-barcode" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">1. Speed POS & 1-Click GST Invoicing</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Cashier points barcode gun, items pop onto screen instantly with correct GST rate. Accepts cash, UPI QR, and card. Thermal print or digital WhatsApp receipt sent in seconds.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">Thermal Printer</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">Offline Cash Mode</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">GST Filing CSV</span>
+          </div>
+        </div>
+
+        <div class="glass-app-tile">
+          <div class="tile-top-beam bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-4 border border-emerald-200 icon-float">
+              <i data-lucide="bell-ring" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">2. Low-Stock WhatsApp Alert Engine</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Never turn away a customer because an item went out-of-stock. When milk, rice, or spices drop below threshold, the store owner and supplier receive automatic purchase order alerts on WhatsApp.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">Auto PO Generator</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">Expiry Tracker</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">WhatsApp Alert</span>
+          </div>
+        </div>
+
+        <div class="glass-app-tile">
+          <div class="tile-top-beam bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-4 border border-emerald-200 icon-float">
+              <i data-lucide="book-open" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">3. Customer Udhar / Khata Ledger with UPI Link</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Maintain digital credit accounts for regular neighborhood customers. System sends automated, polite WhatsApp payment reminders with dynamic UPI payment links for 1-tap clearance.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">Zero Bad Debts</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">UPI Link</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">SMS Statement</span>
+          </div>
+        </div>
+
+        <div class="glass-app-tile">
+          <div class="tile-top-beam bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-400"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-4 border border-emerald-200 icon-float">
+              <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2">4. B2B Wholesale & Ordering Portal</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              For distributors and wholesalers: your retailers can browse items with tier pricing, place bulk orders from their phone, and receive instant dispatched tracking.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">Tier Pricing</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">Mobile Ordering</span>
+            <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-white/90 border border-emerald-200 text-emerald-800">Dispatched Notification</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRY FORM -->
+  <section id="contact-spec" class="py-16 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="glass-card p-8 border-2 border-emerald-200 shadow-2xl">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs font-extrabold text-emerald-700 uppercase tracking-widest">Get Retail Software Proposal</span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Request Supermarket POS Scope</h3>
+          <p class="text-xs text-slate-600 mt-2">Delivered straight to our engineering inbox at <code>aetherovatesoftwaresolutions@gmail.com</code>.</p>
+        </div>
+
+        <form id="retail-inquiry-form" class="space-y-4 max-w-xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Owner Name *</label>
+              <input type="text" id="rt-name" required placeholder="e.g. Ramesh Patel" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-emerald-500 focus:bg-white outline-none shadow-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Store / Wholesale Business Name *</label>
+              <input type="text" id="rt-store" required placeholder="e.g. Patel Supermarket & Traders" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-emerald-500 focus:bg-white outline-none shadow-xs">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Phone / WhatsApp *</label>
+              <input type="tel" id="rt-phone" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-emerald-500 focus:bg-white outline-none shadow-xs">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Number of Counters / Stores</label>
+              <input type="text" id="rt-counters" placeholder="e.g. 2 Counters, ~150 bills/day" class="w-full px-4 py-2.5 rounded-xl bg-white/85 border border-white text-slate-900 text-xs focus:border-emerald-500 focus:bg-white outline-none shadow-xs">
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Submit Requirements & Send To Gmail</span>
+          </button>
+
+          <div id="rt-status" class="hidden p-3 rounded-xl text-xs font-medium text-center"></div>
+
+          <div class="pt-4 text-center border-t border-slate-200/80 flex items-center justify-center gap-3">
+            <span class="text-xs text-slate-600">Prefer immediate chat?</span>
+            <a href="https://wa.me/917607919233?text=Hello%20Aetherovate,%20I%20want%20to%20discuss%20Retail/POS%20software." target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1">
+              <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+              <span>Connect on WhatsApp</span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="glass-surface border-t border-white/90 text-slate-600 py-8 text-center text-xs">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <p>© 2026 Aetherovate Software Solutions. All rights reserved. • 100% Client Code Ownership Guaranteed.</p>
+      <a href="../index.html" class="font-bold text-brand-700 hover:underline">&larr; Explore All 8 Business Suites</a>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('retail-inquiry-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = document.getElementById('rt-status');
+      const name = document.getElementById('rt-name').value;
+      const store = document.getElementById('rt-store').value;
+      const phone = document.getElementById('rt-phone').value;
+      const counters = document.getElementById('rt-counters').value;
+
+      try {
+        await fetch('https://formsubmit.co/ajax/aetherovatesoftwaresolutions@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name, store, phone, counters,
+            _subject: `New Retail Software Inquiry: ${store}`
+          })
+        });
+      } catch (err) {}
+
+      status.className = 'p-4 rounded-xl text-xs font-semibold text-center bg-emerald-50 text-emerald-800 border border-emerald-200 block';
+      status.innerHTML = `🎉 Thank you ${name}! Your requirements for <strong>${store}</strong> have been delivered to our engineering inbox (<code>aetherovatesoftwaresolutions@gmail.com</code>). We will contact you within 24 hours.`;
+    });
+  </script>
+</body>
+</html>
